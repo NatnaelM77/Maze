@@ -1,0 +1,7 @@
+{
+	"files.associations": {
+		"main.h": "c",
+		"utils.h": "c",
+		"sdl_ttf.h": "c"
+	}
+}
