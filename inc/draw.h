@@ -1,10 +1,19 @@
 #ifndef DRAW_H
 #define DRAW_H
 
-#include "main.h"
+/* draw scene */
+void drawScene(void);
 
-void displayMap();
-void updateScene();
-void checkCollision(int x, int y, int size);
+/* clear scene */
+void clearScene(void);
+
+/* load assets */
+void loadAssets(void);
+
+/* load image */
+SDL_Texture *loadImage(const char* path, SDL_Renderer* renderer);
+
+/* render texture */
+void renderTexture(SDL_Texture *texture, SDL_Renderer *renderer, SDL_Rect *srcRect, SDL_Rect destRect);
 
 #endif /* DRAW_H */

@@ -6,28 +6,21 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <SDL2/SDL.h>
-#include <SDL2/SDL_ttf.h>
 #include <SDL2/SDL_image.h>
 
-#define SCREEN_WIDTH 1100
-#define SCREEN_HEIGHT 650
+/* init sdl */
+bool init(void);
 
-/**
- * 
- */
+/* events handler */
+void input(void);
 
-typedef struct App
-{
-	SDL_Window* window;
-	SDL_Renderer* renderer;
-} APP;
+/* quit window */
+void quit(void);
 
-void input();
-
-extern APP app;
-extern TTF_Font *Font;
+/* running state */
 extern bool isRunning;
+
+/* event */
 extern SDL_Event event;
-extern int speedX, speedY;
 
 #endif /* MAIN_H */

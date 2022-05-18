@@ -1,10 +1,12 @@
-#ifndef UTIL_H
-#define UTIL_H
+#ifndef UTILS_H
+#define UTILS_H
 
-void LogError(const char* type);
-TTF_Font *OpenFont(const char* path, int size);
-void CloseFont(TTF_Font *Font);
-void RenderTexture(SDL_Texture *Texture, int x, int y);
-void DisplayText(TTF_Font *Font, const char *message, SDL_Color FontColor, int x, int y);
+#include "main.h"
 
-#endif /* UTIL_H */
+/* log error */
+void logError(const char* type);
+
+/* rad to deg */
+int radToDeg(double rad);
+
+#endif /* UTILS_H */

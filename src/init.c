@@ -1,34 +1,39 @@
-#include "../inc/init.h"
-
-/**
- * init - init sdl window & renderer
- * 
- * Return: return true if window is created otherwise false
- */
+#include "../inc/main.h"
+#include "../inc/utils.h"
+#include "../inc/structs.h"
 
 APP app;
 
-bool init()
+/**
+ * init - initiate sdl window and renderer
+ * Return: true if sdl window is create otherwise false
+ */
+
+bool init(void)
 {
 	bool isInit = true;
+	int windowFlags = 0;
+	int rendererFlags = SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC;
 
-	if (SDL_Init(SDL_INIT_VIDEO) < 0)
+	if (SDL_Init(SDL_INIT_VIDEO) != 0)
 	{
-		LogError("SDL_INIT_VIDEO");
+		logError("SDL_INIT_VIDEO");
 		isInit = false;
 	}
 
-	app.window = SDL_CreateWindow("Maze", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, 0);
+	app.window = SDL_CreateWindow("Maze Game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, windowFlags);
+
 	if (app.window == NULL)
 	{
-		LogError("SDL_CreateWindow");
+		logError("SDL_CreateWindow");
 		isInit = false;
 	}
 
-	app.renderer = SDL_CreateRenderer(app.window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+	app.renderer = SDL_CreateRenderer(app.window, -1, rendererFlags);
+
 	if (app.renderer == NULL)
 	{
-		LogError("SDL_CreateRenderer");
+		logError("SDL_CreateRenderer");
 		isInit = false;
 	}
 
@@ -36,7 +41,7 @@ bool init()
 }
 
 /**
- * quit - quit window 
+ * quit - quit sdl window and renderer
  */
 
 void quit()
