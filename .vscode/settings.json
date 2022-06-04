@@ -2,6 +2,12 @@
 	"files.associations": {
 		"main.h": "c",
 		"utils.h": "c",
-		"sdl_ttf.h": "c"
+		"sdl_ttf.h": "c",
+		"structs.h": "c",
+		"cstdio": "c",
+		"sdl.h": "c",
+		"draw.h": "c",
+		"map.h": "c",
+		"player.h": "c"
 	}
 }

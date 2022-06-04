@@ -2,18 +2,12 @@
 #define MAP_H
 
 /* size */
-#define SIZE 15
+#define SIZE 32;
 
-/* player angle */
-extern double angle;
-
-/* player */
-extern SDL_Rect playerRect;
+/* map */
+extern int map[10][10];
 
 /* mini map */
 void drawMap(void);
-
-/* check collision */
-void checkCollision(void);
 
 #endif /* MAP_H */
